@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const ctrl = require('./db/controllers/index');
-const { getAllVenues } = require('./db/controllers/Venue');
 
 router.get('/', function (req, res) {
   res.send("we're getting routes!");
@@ -54,19 +53,7 @@ router.post('/venues', ctrl.createVenue)
 // TODO:
 // get one venue
 router.get('/venues', function (req, res) {
-  getAllVenues()
-    .then(response => {
-
-      res.send(response);
-      console.log("route is getting data", response);
-    })
-
-  // // let venues = getAllVenues();
-  // getAllVenues()
-  // // .then(response => {
-  // // console.log("route is getting venues", response)
-  // res.send("we are getting a venue!", res);
-  // // })
+  res.send("we are getting a venue!");
 })
 
 // TODO: 
